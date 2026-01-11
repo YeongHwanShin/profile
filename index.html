@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yeonghwan Shin (Simon) - UX Researcher specializing in AI-HCI, Brain-Computer Interface, and Experience Design">
+    <meta name="keywords" content="UX Research, AI-HCI, Brain-Computer Interface, Experience Design, Yeonghwan Shin, Simon">
+    <meta name="author" content="Yeonghwan Shin">
+    <title>Yeonghwan Shin (Simon) - UX Researcher</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #ffffff;
+            --primary-text: #000000;
+            --secondary-text: #666666;
+            --link-hover: 0.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.7;
+            padding: 60px 80px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        a {
+            color: var(--primary-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-text);
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: var(--link-hover);
+        }
+
+        .back-button {
+            font-size: 18px;
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .header {
+            margin-bottom: 60px;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: var(--secondary-text);
+            margin-bottom: 40px;
+        }
+
+        .nav {
+            margin-bottom: 60px;
+        }
+
+        .nav a {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--primary-text);
+            margin: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .section-title::before {
+            content: '∆ ';
+            margin-right: 5px;
+        }
+
+        .project-item {
+            margin-bottom: 40px;
+        }
+
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .project-title a::before {
+            content: '–> ';
+            margin-right: 8px;
+        }
+
+        .project-description {
+            color: var(--secondary-text);
+            margin-left: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 100px;
+            padding-top: 40px;
+            border-top: 1px solid var(--primary-text);
+        }
+
+        .footer a {
+            margin-right: 20px;
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .list-item {
+            margin-bottom: 12px;
+        }
+
+        .list-item::before {
+            content: '–> ';
+            margin-right: 8px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 20px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .nav a,
+            .project-title {
+                font-size: 16px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .footer a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 20px;
+            }
+
+            a {
+                color: var(--primary-text);
+                border-bottom: none;
+            }
+
+            .nav, .back-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HOME PAGE -->
+    <div id="home" class="page-content active">
+        <div class="header">
+            <h1 class="name">Yeonghwan Shin (Simon)</h1>
+            <p class="tagline">UX Research, AI-HCI, Brain-Computer Interface</p>
+        </div>
+
+        <nav class="nav">
+            <a href="#home" onclick="navigateTo('home'); return false;">–> Selected Work</a>
+            <a href="#about" onclick="navigateTo('about'); return false;">–> About</a>
+            <a href="#publications" onclick="navigateTo('publications'); return false;">–> Publications</a>
+            <a href="#contact" onclick="navigateTo('contact'); return false;">–> Contact</a>
+        </nav>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="project-item">
+                <div class="project-title"><a href="#golden-capsule" onclick="navigateTo('golden-capsule'); return false;">Golden Capsule (2023)</a></div>
+                <div class="project-description">
+                    Non-powered medicine injector for disaster relief<br>
+                    James Dyson Award International Winner
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title"><a href="#minwon99" onclick="navigateTo('minwon99'); return false;">Minwon 99 (2024)</a></div>
+                <div class="project-description">
+                    AI-based civil complaint filtering system<br>
+                    Best Paper Prize, HCI Korea 2025
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title"><a href="#sophybara" onclick="navigateTo('sophybara'); return false;">SophyBARA (2025)</a></div>
+                <div class="project-description">
+                    Philosophical debate AI agents<br>
+                    Multi-agent system research
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title"><a href="#pawpulse" onclick="navigateTo('pawpulse'); return false;">Paw Pulse (2025)</a></div>
+                <div class="project-description">
+                    AI pet health monitoring system<br>
+                    XREAL XR Hackathon Winner
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <footer class="footer">
+            <a href="mailto:yhsin131@naver.com">Email</a>
+            <a href="https://www.linkedin.com/in/yeonghwan-shin/" target="_blank">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=QwVeldgAAAAJ&hl=ko" target="_blank">Scholar</a>
+            <a href="https://www.instagram.com/hwan.yeong_shin/" target="_blank">Instagram</a>
+        </footer>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back</a>
+
+        <div class="header">
+            <h1 class="name">About</h1>
+        </div>
+
+        <nav class="nav">
+            <a href="#home" onclick="navigateTo('home'); return false;">–> Selected Work</a>
+            <a href="#about" onclick="navigateTo('about'); return false;">–> About</a>
+            <a href="#publications" onclick="navigateTo('publications'); return false;">–> Publications</a>
+            <a href="#contact" onclick="navigateTo('contact'); return false;">–> Contact</a>
+        </nav>
+
+        <hr class="divider">
+
+        <div class="profile-section">
+            <div class="profile-text">
+                <p style="margin-bottom: 20px;">
+                    My name is YeongHwan Shin, just call me <strong>Simon.</strong>
+                </p>
+                <p style="margin-bottom: 20px;">
+                    I'm a graduate of Hongik University. My primary research interests lie in AI-based experience design, 
+                    Human-AI interaction, and emotion analysis using Brain-Computer Interface (BCI).
+                </p>
+                <p>
+                    My aspiration is to become a UX researcher who creates innovative fields by bridging AI, humanities, 
+                    and engineering. I aim to forge new pathways in how we understand and design human-centered technological experiences.
+                </p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Current Position</h2>
+            <div class="project-item">
+                <div class="project-title">Content Researcher @ HI LAB</div>
+                <div class="project-description">
+                    Samsung Medical Center (Feb. 2025 - Current)<br>
+                    Medical Education with Child Robot Interaction<br>
+                    Prof. Meong Hi Son
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="project-item">
+                <div class="project-title">B.E. Design Engineering</div>
+                <div class="project-description">
+                    Hongik University, Seoul, South Korea<br>
+                    2018.03 - 2025.02
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Product Manager @ Wheely-X Lab</div>
+                <div class="project-description">
+                    Oct. 2024 - Feb. 2025<br>
+                    Game Design for wheelchair users<br>
+                    Role: Game Level Design, Product Management
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Research Intern @ SNUH MEdiSC</div>
+                <div class="project-description">
+                    Apr. 2024 - Jun. 2024<br>
+                    Breathing Assistance System using Haptic Device<br>
+                    Prof. Hyoun Joong Kong
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Undergraduate Researcher @ MiMi Lab</div>
+                <div class="project-description">
+                    Apr. 2023 - Dec. 2023<br>
+                    Autonomous Vehicle's External Interface Design Research<br>
+                    Prof. Dokshin Lim
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Skills & Focus</h2>
+            <div style="margin-left: 0;">
+                <div class="list-item">Spatial Computing: VR/AR (Hololens 2), Unity (C#), Swift, Vision Pro</div>
+                <div class="list-item">Research Methods: Eye Gaze (Tobii Pro Spark), EEG (Muse 2), Body Tracking (Sony Mocopi)</div>
+                <div class="list-item">Data Analysis: R, Python, MATLAB, scipy, jamovi</div>
+                <div class="list-item">Design Tools: Figma, Bezi 3D, Fusion 360, Siemens NX</div>
+                <div class="list-item">Machine Learning: OpenCV, PyTorch, TensorFlow</div>
+                <div class="list-item">CAE & Simulation: Adams, Fluent, Ansys Discovery</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Awards & Recognition</h2>
+            <div style="margin-left: 0;">
+                <div class="list-item">James Dyson Award International Winner (Nov. 2023)</div>
+                <div class="list-item">IDEA Award Gold Winner - Student Category (Sep. 2024)</div>
+                <div class="list-item">Seoul Design Award First Winner - Research (Oct. 2024)</div>
+                <div class="list-item">HCI Korea Best Paper Prize (Feb. 2025)</div>
+                <div class="list-item">XREAL XR Hackathon 2nd Winner (Jan. 2025)</div>
+                <div class="list-item">SPARCSAI Startup Hackathon 1st Winner (Aug. 2024)</div>
+                <div class="list-item">Capstone Design Fair Prime Minister Winner (Nov. 2023)</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GOLDEN CAPSULE PROJECT -->
+    <div id="golden-capsule" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back to Work</a>
+
+        <div class="header">
+            <h1 class="name">Golden Capsule</h1>
+            <p class="tagline">Non-powered medicine injector for disaster relief (2023)</p>
+        </div>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <p style="margin-bottom: 20px;">
+                <strong>Role:</strong> Lead Designer, Researcher<br>
+                <strong>Timeline:</strong> March 2023 - November 2023<br>
+                <strong>Team:</strong> 5 members (Yeonghwan Shin, Daeyeon Kim, Yujin Chae, Yuan Bai, Jiho Kim)<br>
+                <strong>Tools:</strong> Fusion 360, Unity, Arduino, Ansys Discovery
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Challenge</h2>
+            <p>
+                Emergency medical situations in disaster zones require quick medication delivery without 
+                traditional power sources. How might we design a reliable, non-powered injection system 
+                that works in extreme conditions where infrastructure is compromised?
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Solution</h2>
+            <p>
+                Designed a non-powered medicine injector utilizing air pressure and elasticity. 
+                The device requires no external power source and can deliver precise medication doses 
+                in emergency situations. By focusing on fundamental physics principles, we created 
+                a reliable, fail-safe system that works independently of electricity or batteries.
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Impact & Recognition</h2>
+            <div style="margin-left: 0;">
+                <div class="list-item">James Dyson Award International Winner (2023)</div>
+                <div class="list-item">Capstone Design Fair Prime Minister Winner - 1st Place (2023)</div>
+                <div class="list-item">Creative Engineering Design Award, MMR Workshop (2023)</div>
+                <div class="list-item">Prototype for Humanity - Health, Relief and Safety Winner (2023)</div>
+                <div class="list-item">Published in IEA Triennial Congress 2024</div>
+                <div class="list-item">Exhibited at Seoul Design Festival, Design Korea, Red Dot Design Museum</div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Reflection</h2>
+            <p>
+                This project taught me the importance of designing for extreme constraints. 
+                By focusing on the fundamental physics of air pressure and elasticity, we created 
+                a solution that works reliably without batteries or electricity—critical for 
+                disaster relief scenarios. The international recognition validated our user-centered 
+                approach to humanitarian design.
+            </p>
+        </section>
+
+        <div style="margin-top: 60px;">
+            <a href="#minwon99" onclick="navigateTo('minwon99'); return false;">–> Next Project: Minwon 99</a><br>
+            <a href="#home" onclick="navigateTo('home'); return false;" style="margin-top: 10px; display: inline-block;">–> Back to All Work</a>
+        </div>
+    </div>
+
+    <!-- MINWON 99 PROJECT -->
+    <div id="minwon99" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back to Work</a>
+
+        <div class="header">
+            <h1 class="name">Minwon 99</h1>
+            <p class="tagline">Malicious civil complaint filtering system (2024)</p>
+        </div>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <p style="margin-bottom: 20px;">
+                <strong>Role:</strong> AI/ML Developer, UX Researcher<br>
+                <strong>Timeline:</strong> 2024<br>
+                <strong>Tools:</strong> LLM-based Text Emotion Moderation, Python, Machine Learning
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Challenge</h2>
+            <p>
+                Civil servants face an increasing volume of malicious complaints that consume valuable time 
+                and resources. How might we use AI to filter and moderate emotionally charged complaints 
+                while maintaining fairness and transparency?
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Solution</h2>
+            <p>
+                Developed an LLM-based text emotion moderation system that automatically identifies and 
+                filters malicious civil complaints. The system uses natural language processing to analyze 
+                emotional content and intent, helping civil servants prioritize legitimate concerns.
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Impact & Recognition</h2>
+            <div style="margin-left: 0;">
+                <div class="list-item">Best Paper Prize at HCI Korea 2025</div>
+                <div class="list-item">Published in Proceedings of HCI KOREA 2025</div>
+                <div class="list-item">Co-authors: Seong-min Choi, Hohyun Song, Kyusung Lee, Eunji Park</div>
+            </div>
+        </section>
+
+        <div style="margin-top: 60px;">
+            <a href="#sophybara" onclick="navigateTo('sophybara'); return false;">–> Next Project: SophyBARA</a><br>
+            <a href="#home" onclick="navigateTo('home'); return false;" style="margin-top: 10px; display: inline-block;">–> Back to All Work</a>
+        </div>
+    </div>
+
+    <!-- SOPHYBARA PROJECT -->
+    <div id="sophybara" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back to Work</a>
+
+        <div class="header">
+            <h1 class="name">SophyBARA</h1>
+            <p class="tagline">Philosophical debate AI agents (2025)</p>
+        </div>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <p style="margin-bottom: 20px;">
+                <strong>Role:</strong> Research Lead, AI Developer<br>
+                <strong>Timeline:</strong> 2025 (Ongoing)<br>
+                <strong>Tools:</strong> Multi-agent systems, RAG, n8n, GPT-4
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Challenge</h2>
+            <p>
+                How might we use AI agents to simulate philosophical debates between historical thinkers, 
+                providing users with diverse perspectives on complex ethical and existential questions?
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Solution</h2>
+            <p>
+                Developing a multi-agent system where AI agents embody different philosophers' thinking styles. 
+                Users can pose questions and watch philosophical debates unfold, offering educational value 
+                and critical thinking training through exposure to diverse viewpoints.
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Current Status</h2>
+            <p>
+                Active research project exploring multi-agent systems in XR environments. 
+                Planning expert evaluation with philosophy professors and usability testing with general users.
+            </p>
+        </section>
+
+        <div style="margin-top: 60px;">
+            <a href="#pawpulse" onclick="navigateTo('pawpulse'); return false;">–> Next Project: Paw Pulse</a><br>
+            <a href="#home" onclick="navigateTo('home'); return false;" style="margin-top: 10px; display: inline-block;">–> Back to All Work</a>
+        </div>
+    </div>
+
+    <!-- PAW PULSE PROJECT -->
+    <div id="pawpulse" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back to Work</a>
+
+        <div class="header">
+            <h1 class="name">Paw Pulse</h1>
+            <p class="tagline">AI pet health monitoring system (2025)</p>
+        </div>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Project Overview</h2>
+            <p style="margin-bottom: 20px;">
+                <strong>Role:</strong> UX Researcher, AI Developer<br>
+                <strong>Timeline:</strong> 2025<br>
+                <strong>Recognition:</strong> XREAL XR Hackathon 2nd Winner
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Challenge</h2>
+            <p>
+                Pet owners struggle to monitor their pets' health and detect early signs of illness. 
+                How might we leverage AI and XR technology to provide accessible health insights?
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Solution</h2>
+            <p>
+                Developed an AI-powered pet health monitoring system that helps owners track and 
+                understand their pets' wellbeing. The system provides actionable insights and 
+                early warning signs for potential health issues.
+            </p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Impact</h2>
+            <div style="margin-left: 0;">
+                <div class="list-item">XREAL XR Hackathon 2nd Winner (January 2025)</div>
+                <div class="list-item">Demonstrated practical application of AI in pet care</div>
+            </div>
+        </section>
+
+        <div style="margin-top: 60px;">
+            <a href="#golden-capsule" onclick="navigateTo('golden-capsule'); return false;">–> Next Project: Golden Capsule</a><br>
+            <a href="#home" onclick="navigateTo('home'); return false;" style="margin-top: 10px; display: inline-block;">–> Back to All Work</a>
+        </div>
+    </div>
+
+    <!-- PUBLICATIONS PAGE -->
+    <div id="publications" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back</a>
+
+        <div class="header">
+            <h1 class="name">Publications & Research</h1>
+        </div>
+
+        <nav class="nav">
+            <a href="#home" onclick="navigateTo('home'); return false;">–> Selected Work</a>
+            <a href="#about" onclick="navigateTo('about'); return false;">–> About</a>
+            <a href="#publications" onclick="navigateTo('publications'); return false;">–> Publications</a>
+            <a href="#contact" onclick="navigateTo('contact'); return false;">–> Contact</a>
+        </nav>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">International Publications</h2>
+
+            <div class="project-item">
+                <div class="project-title">Doppelganger Method: Breaking Role Consistency in LLM Agent via Prompt-based Transferable Adversarial Attack</div>
+                <div class="project-description">
+                    Daewon Kang, <strong>YeongHwan Shin</strong>, Doyeon Kim, Kyu-Hwan Jung, Meong Hi Son<br>
+                    arXiv Preprint, 2025<br>
+                    <a href="https://arxiv.org/abs/2506.14539" target="_blank">View Paper</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Development and Validation of a Prompt-Chaining–Based Pediatric Virtual Patient Model</div>
+                <div class="project-description">
+                    <strong>YeongHwan Shin</strong>, Yujin Seo, Daewon Kang, Bokyung Kim, Meong Hi Son<br>
+                    Medical Informatics Europe 2026 (Submitted)
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Design of a Non-powered Medicine Injector Utilizing Air Pressure and Elasticity</div>
+                <div class="project-description">
+                    <strong>Yeonghwan Shin</strong>, Daeyeon Kim, Yujin Chae, Yuan Bai, Jiho Kim, Dokshin Lim<br>
+                    22nd Triennial Congress of the International Ergonomics Association 2024<br>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-96-9334-4_52" target="_blank">View Paper</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">External Human-Machine Interface of Autonomous Vehicles: Insights from observations on behavior in mixed traffic</div>
+                <div class="project-description">
+                    Dokshin Lim, Yongjun Kim, <strong>YeongHwan Shin</strong>, Min Seo Yu<br>
+                    Vehicles 2024, 6(3), 1139-1150<br>
+                    <a href="https://doi.org/10.3390/vehicles6030061" target="_blank">View Paper</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Anthropomorphic External Human-Machine Interface Design of Autonomous Vehicles in Roblox</div>
+                <div class="project-description">
+                    Dokshin Lim, Yongjun Kim, Hagyeong Gwon, <strong>Yeonghwan Shin</strong><br>
+                    2023 11th International Conference on ACIIW<br>
+                    <a href="https://doi.org/10.1109/ACIIW59127.2023.10388139" target="_blank">View Paper</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Domestic Publications (Korea)</h2>
+
+            <div class="project-item">
+                <div class="project-title">Minwon 99: Malicious Civil Complaint Filtering System Using LLM-Based Text Emotion Moderation Technology</div>
+                <div class="project-description">
+                    Seong-min Choi, Hohyun Song, <strong>Yeonghwan Shin</strong>, Kyusung Lee, Eunji Park<br>
+                    <strong>Best Paper Prize</strong>, Proceedings of HCI KOREA 2025
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">AI Docent Based on Apple Vision Pro: Designing and Exploring the Potential of MR Exhibition Experiences</div>
+                <div class="project-description">
+                    Jisu Lee, <strong>Yeonghwan Shin</strong>, Jaehun Choe, Dae Hyun Yang, Joeun Lee, Hyojung Jung<br>
+                    Proceedings of HCI KOREA 2025
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Generative AI, XR, and New Possibilities in Exhibitions: The Roles of Virtual Artists and Docents</div>
+                <div class="project-description">
+                    <strong>Yeonghwan Shin</strong>, Jisu Lee, Hyojung Jung<br>
+                    Proceedings of HCI KOREA 2025
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Development and Usability of Breathing Assistance System Utilizing Virtual Reality and Haptic Feedback</div>
+                <div class="project-description">
+                    So-yeon Yang, <strong>Yeonghwan Shin</strong>, Youngbin Kong, Kwangtai Kim, Jeeyoung Hong, Kyu Eun Lee, Hyoun-Joong Kong<br>
+                    Korea Society of Computer Information Summer Conference 2024
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page-content">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="back-button">[︎←] Back</a>
+
+        <div class="header">
+            <h1 class="name">Let's Connect</h1>
+        </div>
+
+        <nav class="nav">
+            <a href="#home" onclick="navigateTo('home'); return false;">–> Selected Work</a>
+            <a href="#about" onclick="navigateTo('about'); return false;">–> About</a>
+            <a href="#publications" onclick="navigateTo('publications'); return false;">–> Publications</a>
+            <a href="#contact" onclick="navigateTo('contact'); return false;">–> Contact</a>
+        </nav>
+
+        <hr class="divider">
+
+        <p style="margin-bottom: 40px;">
+            I'm always interested in collaborating on research projects at the intersection 
+            of AI, human-computer interaction, and experience design. Whether you're looking 
+            for a UX researcher, have an interesting project, or just want to chat about 
+            AI-HCI and BCI, feel free to reach out.
+        </p>
+
+        <hr class="divider">
+
+        <section class="section">
+            <h2 class="section-title">Get in Touch</h2>
+
+            <div class="project-item">
+                <div class="project-title">Email</div>
+                <div class="project-description">
+                    <a href="mailto:yhsin131@naver.com">yhsin131@naver.com</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">LinkedIn</div>
+                <div class="project-description">
+                    <a href="https://www.linkedin.com/in/yeonghwan-shin/" target="_blank">linkedin.com/in/yeonghwan-shin</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Google Scholar</div>
+                <div class="project-description">
+                    <a href="https://scholar.google.com/citations?user=QwVeldgAAAAJ&hl=ko" target="_blank">View Publications</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Instagram</div>
+                <div class="project-description">
+                    <a href="https://www.instagram.com/hwan.yeong_shin/" target="_blank">@hwan.yeong_shin</a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <p style="color: var(--secondary-text);">
+            Currently based in Seoul, South Korea<br>
+            Open to research collaborations worldwide
+        </p>
+    </div>
+
+    <script>
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                
+                // Update URL hash without jumping
+                history.pushState(null, null, '#' + pageId);
+                
+                // Scroll to top smoothly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(e) {
+            const hash = window.location.hash.substring(1) || 'home';
+            navigateTo(hash);
+        });
+
+        // Handle initial load with hash
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1) || 'home';
+            if (hash && hash !== 'home') {
+                navigateTo(hash);
+            }
+        });
+    </script>
+</body>
+</html>
